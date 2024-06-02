@@ -1,0 +1,178 @@
+/* style.css */
+
+/* Reset de margens e preenchimentos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Estilo para o cabeçalho */
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilo para a barra de navegação */
+.navbar {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilo para a seção de introdução */
+.intro {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.intro img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilo para o formulário de busca */
+.search-form {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para a seção de uploads */
+.upload {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para as mensagens flash */
+.flash-messages {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.flash-messages li {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Estilo para a seção de arquivos */
+.files {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.files ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.files ul li {
+    margin-bottom: 10px;
+}
+
+/* Estilo para a seção de exclusão de arquivos */
+.delete-file {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.delete-file form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-file form label,
+.delete-file form select,
+.delete-file form input[type="password"],
+.delete-file form button {
+    margin: 5px;
+}
+
+/* Estilo para a seção de contato */
+.contact {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contact form {
+    display: inline-block;
+    text-align: left;
+}
+
+.contact label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background-color: #0056b3;
+}
+
+.upload input[type="file"],
+.upload input[type="submit"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
