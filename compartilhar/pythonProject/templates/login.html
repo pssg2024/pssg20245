@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Compartilhamento de Conhecimento</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>Compartilhamento de Conhecimento</h1>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="intro">
+            <img src="{{ url_for('static', filename='cop.jpg') }}" width="400" height="200" alt="Imagem ilustrativa">
+            <h2>Objetivo do Site</h2>
+            <p>Esse é um site de compartilhamento de ideias permite que pessoas publiquem suas ideias e projetos, recebam feedback, e colaborem com outros. Seu objetivo é facilitar a troca de conhecimento, promover a criatividade e construir uma comunidade engajada. As principais funcionalidades incluem publicação de conteúdo, comentários, avaliações, perfis de usuários, categorias e tags, e notificações para manter os usuários informados.</p>
+        </section>
+
+        <section class="search-upload">
+            <div class="search">
+                <form class="search-form" action="/" method="GET">
+                    <input type="text" class="search-input" name="q" placeholder="Pesquisar...">
+                    <button type="submit" class="search-button">Buscar</button>
+                </form>
+            </div>
+
+            <div class="upload">
+                <h2>Poste Seu Conteúdo</h2>
+                <form action="/" method="post" enctype="multipart/form-data" class="upload-form">
+                    <label for="file">Escolha um arquivo para upload:</label>
+                    <input type="file" id="file" name="file">
+                    <input type="submit" value="Enviar" class="submit-button">
+                </form>
+            </div>
+        </section>
+
+        <!-- Mostrar mensagens de flash -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class="flash-messages">
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+        <section class="files">
+            <h2>Arquivos Publicados</h2>
+            <ul>
+                {% for file in files %}
+                    <li>
+                        <a href="{{ url_for('uploaded_file', filename=file) }}" target="_blank">{{ file }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="delete-file">
+            <h2>Excluir Arquivo</h2>
+            <form action="{{ url_for('delete_file') }}" method="post">
+                <label for="filename">Escolha um arquivo para excluir:</label>
+                <select id="filename" name="filename" required>
+                    {% for file in files %}
+                        <option value="{{ file }}">{{ file }}</option>
+                    {% endfor %}
+                </select><br><br>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <button type="submit">Excluir</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Informações de contato -->
+    <footer class="contact">
+        <p>Para entrar em contato, envie um e-mail para evandro132213@gmail.com, lucibalmeida@gmail.com ou marcelomarqueslima55@gmail.com.</p>
+    </footer>
+</body>
+</html>
